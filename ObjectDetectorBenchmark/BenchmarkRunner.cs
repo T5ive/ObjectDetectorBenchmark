@@ -2,7 +2,7 @@
 
 public class BenchmarkRunner(string modelPath, string imagePath)
 {
-    private const int RunCount = 5;
+    private const int Iterations = 5;
 
     public async Task<List<BenchmarkResult>> RunBenchmarksAsync()
     {
@@ -102,7 +102,7 @@ public class BenchmarkRunner(string modelPath, string imagePath)
 
             // Measure average prediction time over 100 runs
             var times = new List<double>();
-            for (var i = 0; i < RunCount; i++)
+            for (var i = 0; i < Iterations; i++)
             {
                 stopwatch.Restart();
                 await detector.DetectAsync(imagePath);
